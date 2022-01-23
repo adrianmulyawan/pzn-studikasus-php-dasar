@@ -360,4 +360,24 @@ require_once "View/ViewRemoveTodolist.php";
 require_once "BusinessLogic/AddTodolist.php";
 require_once "BusinessLogic/ShowTodolist.php";
 
-2. Setelah itu jalankan fungsi logic tambah data todo, 
+2. Setelah itu jalankan fungsi logic tambah data todo, menampilkan seluruh data todo dan menghapus data 
+addTodoList("Belajar PHP Dasar");
+addTodoList("Belajar PHP OOP");
+addTodoList("Belajar PHP Database");
+addTodoList("Belajar PHP Web");
+addTodoList("Belajar PHP Composer");
+addTodoList("Belajar PHP Unit Test");
+
+showTodoList();
+
+removeTodoList(3);
+
+showTodoList();
+
+removeTodoList(3);
+
+showTodoList();
+
+removeTodoList(3);
+
+showTodoList();

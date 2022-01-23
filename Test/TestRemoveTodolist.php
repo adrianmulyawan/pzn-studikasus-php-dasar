@@ -14,14 +14,14 @@ addTodoList("Belajar PHP Unit Test");
 
 showTodoList();
 
-removeTodoList(2);
+removeTodoList(3);
 
 showTodoList();
 
-removeTodoList(5);
+removeTodoList(3);
 
 showTodoList();
 
-removeTodoList(5);
+removeTodoList(3);
 
 showTodoList();
