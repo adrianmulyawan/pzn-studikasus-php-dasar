@@ -228,3 +228,56 @@ echo "Hello $name" . PHP_EOL;
 // Input Channel 
 $channel = input("Channel");
 echo "Nama Channel : $channel" . PHP_EOL;
+
+========================================================================
+
+> View Show Todolist 
+1. Buka file ViewShowTodolist.php yang berada di folder View/ViewShowTodolist.php 
+
+2. Setelah itu kita panggil 
+require_once "Models/TodoList.php";
+require_once "Helper/Input.php";
+require_once "BusinessLogic/ShowTodolist.php";
+require_once "View/ViewAddTodolist.php";
+require_once "View/ViewRemoveTodolist.php";
+
+3. Dan didalam functon ViewShowTodolist isi seperti ini 
+function viewShowTodoList()
+{
+    // Iterasi / Perulangan Jika Kondisinya true
+    while(true) {
+        showTodoList();
+
+        echo "MENU" . PHP_EOL;
+        echo "1. Tambah Todo" . PHP_EOL;
+        echo "2. Hapus Todo" . PHP_EOL;
+        echo "x. Keluar" . PHP_EOL;
+
+        $pilihan = input("Pilih");
+        if ($pilihan == "1") {
+            viewAddTodoList();
+        } else if ($pilihan == "2") {
+            viewRemoveTodoList();
+        } else if($pilihan == "x") {
+            break;
+        } else {
+            echo "Pilihan Tidak Dimengerti" . PHP_EOL;
+        }
+    }
+
+    echo "Sampai Jumpa Lagi!" . PHP_EOL;
+}
+
+> Test Show Todolist
+1. Buat file baru didalam folder Test/ dengan nama TestViewShowTodolist.php 
+
+2. Setelah itu kita panggil function viewShowTodoList() yang berada didalam folder View/ViewShowTodolist dan function untuk menambahkan TodoList (addTodoList())
+require_once "View/ViewShowTodolist.php";
+require_once "BusinessLogic/AddTodolist.php";
+
+3. Setelah itu baru kita jalankan function viewShowTodoList() didalam file TestViewShowTodolist
+viewShowTodoList()
+addTodoList("Belajar PHP Dasar");
+addTodoList("Belajar PHP OOP");
+addTodoList("Belajar PHP Database");
+viewShowTodoList();
