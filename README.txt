@@ -281,3 +281,40 @@ addTodoList("Belajar PHP Dasar");
 addTodoList("Belajar PHP OOP");
 addTodoList("Belajar PHP Database");
 viewShowTodoList();
+
+========================================================================
+
+> View Add Todolist
+1. Panggil model, helper, logic tambah todo, dan view menampilkan seluruh data todo 
+require_once "Models/TodoList.php";
+require_once "Helper/Input.php";
+require_once "BusinessLogic/AddTodolist.php";
+require_once "View/ViewShowTodolist.php";
+
+2. Kemudian didalam viewAddTodoList tambahkan seperti ini 
+function viewAddTodoList()
+{
+    echo "MENAMBAHB TODO" . PHP_EOL;
+
+    $todo = input("Todo (x untuk batal) : ");
+
+    if ($todo == "x") {
+        viewShowTodoList();
+    } else {
+        addTodoList($todo);
+    }
+    
+}
+
+> Test View Add Todolist
+1. Panggil View untuk menambahkan data todo, logic menampilkan data todo, dan logic untuk menambahkan todo
+require_once "View/ViewAddTodolist.php";
+require_once "BusinessLogic/ShowTodolist.php";
+require_once "BusinessLogic/AddTodolist.php";
+
+2. Setelah itu jalankan fungsi untuk menampilkan view tambah data todo, fungsi untuk menampilkan seluruh data todo, dan fungsi untuk menambahkan todo
+addTodoList("Belajar PHP Dasar");
+addTodoList("Belajar PHP OOP");
+addTodoList("Belajar PHP Database");
+viewAddTodoList();
+showTodoList();
