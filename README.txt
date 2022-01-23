@@ -205,4 +205,26 @@ showTodoList();
 - Bagaimana menerima input pada dari user? sedangkan disini kita belum belajar yang namanya php web. Sekarang kita akan membuat aplikasi berbasis terminal / command line yang disini kita akan menggunakan function fgets (https://www.php.net/manual/en/function.fgets.php) yang digunakan untuk membaca input / resource dari terminal.
 - Praktik 
 1. Buat folder dengan nama "Helper"
-2. Setelah itu
+
+2. Setelah itu buat file php dengan nama Input.php dan didalamnya kita buat function input dengan paramater "string $input" yang mengembalikan nilai "string" yang digunakan untuk mendapatkan inputan user
+<?php 
+
+function input(string $info): string
+{
+    echo "$info : ";
+    $result = fgets(STDIN);
+    return trim($result);
+}
+
+3. Setelah itu kita buat Testnya didalam folder Test dan buat file TestInput.php dan kita coba terima inputan dari user
+<?php 
+
+require_once "Helper/Input.php";
+
+// Input Nama
+$name = input("Name");
+echo "Hello $name" . PHP_EOL;
+
+// Input Channel 
+$channel = input("Channel");
+echo "Nama Channel : $channel" . PHP_EOL;
