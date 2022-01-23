@@ -198,3 +198,11 @@ showTodoList();
 removeTodoList(5);
 
 showTodoList();
+
+========================================================================
+
+> Input Data
+- Bagaimana menerima input pada dari user? sedangkan disini kita belum belajar yang namanya php web. Sekarang kita akan membuat aplikasi berbasis terminal / command line yang disini kita akan menggunakan function fgets (https://www.php.net/manual/en/function.fgets.php) yang digunakan untuk membaca input / resource dari terminal.
+- Praktik 
+1. Buat folder dengan nama "Helper"
+2. Setelah itu
